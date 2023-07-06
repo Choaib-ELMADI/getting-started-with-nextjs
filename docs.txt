@@ -29,3 +29,77 @@
         globals.css
         page.module.css
         favicon         //Directly added
+
+    > public:           //Store static assets such as images, fonts,...
+
+5. app Routing Conventions:
+    //Routing__files:
+        layout      .js .jsx .tsx ==> Layout
+        page        .js .jsx .tsx ==> Page
+        loading     .js .jsx .tsx ==> Loading UI
+        not-found   .js .jsx .tsx ==> Not Found UI
+        error       .js .jsx .tsx ==> Error UI ({ error, reset })
+        route       .js .ts       ==> API endpoint
+        layout      .js .jsx .tsx ==> Layout
+
+    //Nested__routes:
+        folder/folder     ==> Nested route segment
+        folder/[folder]   ==> Dynamic route segment
+        (folder)          ==> Group routes without affecting routing
+
+6. When to use Server and Client Components?
+    > Server Component:
+        / Fetch data.
+        / Access backend resources.
+        / Keep sensitive information on the server.
+        / Keep large dependencies on the server.
+
+    > Client Component:
+        / Add interactivity and event listeners.
+        / Use State and Lifecycle Effects.
+        / Use browser-only APIs.
+        / Use custom hooks that depend on state, effects, or browser-only APIs.
+
+7. Using context in Client Components:
+    ///:
+        'use client';
+        import { createContext } from 'react';
+        export const NameContext = createContext();
+        export default function NameProvider({ children }) {    
+            return (
+                <NameContext.Provider value="">
+                    { children }
+                </NameContext.Provider>
+            );
+        };
+
+    ///:
+        import NameProvider from '...';
+        use it inside your layout.
+
+        ==> With the provider rendered at the root, 
+            all other Client Components throughout your app 
+            will be able to consume this context.
+
+8. Sharing data between Server Components:
+    ==> Since Server Components are not interactive and therefore 
+        do not read from React state, you don't need React context 
+        to share data.
+
+    ==> Instead, you can use native JavaScript patterns for common 
+        data that multiple Server Components need to access.
+
+9. App Router:
+    
+
+
+
+X. TypeScript:
+    ==> Types:
+        { children }: { children: React.ReactNode }
+        { error, reset }: { error: Error, reset: () => void }
+
+Y. Fonts:
+    import { Font } from 'next/font/google';
+    const font = Font({ subsets: ['latin'], weight: ['400'] });
+    className={ `${ font.className }` }
