@@ -90,8 +90,28 @@
         data that multiple Server Components need to access.
 
 9. App Router:
-    
+    1) Routing Fundamentals:
+        _ Tree: A convention for visualizing a hierarchical structure.
+        _ Subtree: Part of a tree, starting at a new root (first) and ending at the leaves (last).
+        _ Root: The first node in a tree or subtree.
+        _ Leaf: Nodes in a subtree that have no children.
+        _ URL Segment: Part of the URL path delimited by slashes.
+        _ URL Path: Part of the URL that comes after the domain (composed of segments).
 
+    2) Defining Routes:
+        * Root layout is required.
+        * Layouts can be nested.
+        * Layouts persist across routes and maintain state.
+        * Templates create a new instance for each of their children on navigation.
+    
+    3) Modifying <head>:
+        export const metadata = {
+            title: '...',
+            description: '...',
+        }
+
+10. Linking and Navigating:
+    
 
 
 X. TypeScript:
