@@ -123,8 +123,20 @@
         router.push('/dashboard');
 
 11. Dynamic Routes:
-    
-    
+    ==> A Dynamic Segment can be created by wrapping a folder's name in 
+        square brackets: [folderName]. For example, [id] or [slug].
+
+    ==> Dynamic Segments are passed as the params prop to layout, page, 
+        route, and generateMetadata functions.
+
+    ==> Dynamic Segments can be extended to catch-all subsequent 
+        segments by adding an ellipsis inside the brackets [...folderName].
+
+    ==> Catch-all Segments can be made optional by including the parameter 
+        in double square brackets: [[...folderName]].
+
+    <==> The difference between catch-all and optional catch-all segments
+        is that with optional, the route without the parameter is also matched.
 
 
 X. TypeScript:
