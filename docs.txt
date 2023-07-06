@@ -1,0 +1,31 @@
+1. What is Next.js?
+    => Next.js is a framework for building web applications.
+    => Build user interfaces using React components.
+    => Next.js provides additional structure, features, and optimizations for your application.
+    => Next.js also abstracts and automatically configures tooling for you, like bundling, compiling, and more.
+
+2. Main features:
+    > Routing: A file-system based router.
+    > Rendering: Client-side and Server-side Rendering.
+    > Data Fetching: Simplified data fetching with async|await support in React Components.
+    > TypeScript: Improved support for TypeScript.
+
+3. Installation:
+    * npx create-next-app@latest
+
+    What is your project named? my-app
+    Would you like to use TypeScript? No / Yes
+    Would you like to use ESLint? No / Yes
+    Would you like to use Tailwind CSS? No / Yes
+    Would you like to use `src/` directory? No / Yes
+    Would you like to use App Router? (recommended) No / Yes
+    Would you like to customize the default import alias? No / Yes
+
+4. Structure:
+    > app:
+        layout.tsx      //The root layout
+        page.tsx        //The root of the application
+
+        globals.css
+        page.module.css
+        favicon         //Directly added
