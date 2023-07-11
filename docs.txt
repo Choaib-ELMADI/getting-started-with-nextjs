@@ -122,6 +122,9 @@
         const router = useRouter();
         router.push('/dashboard');
 
+    ==> redirect: for server side rendering SSR
+        useRouter: for client side rendering CSR
+
 11. Dynamic Routes:
     ==> A Dynamic Segment can be created by wrapping a folder's name in 
         square brackets: [folderName]. For example, [id] or [slug].
@@ -138,13 +141,39 @@
     <==> The difference between catch-all and optional catch-all segments
         is that with optional, the route without the parameter is also matched.
 
+12. Loading UI and Streaming:
+    => The file loading.js helps you create meaningful Loading UI (instant loading state).
+    => You can also manually create Suspense Boundaries for your own UI components.
+        <Suspense fallback={ <Loading /> }>
+            <Page />
+        </Suspense>
+
+    => Streaming allows you to break down the page's HTML into smaller chunks 
+        and progressively send those chunks from the server to the client.
+
+12. Pending Actions:
+    import { experimental_useFormStatus as useFormStatus } from "react-dom";
+    const { pending } = useFormStatus();
+
+13. NextAuth:
+    <> Set up your providers
+    <> Create your route handler:
+        > app > api > auth > [...nextauth] > route.ts
 
 X. TypeScript:
     ==> Types:
         { children }: { children: React.ReactNode }
         { error, reset }: { error: Error, reset: () => void }
 
+        onChange > e: React.ChangeEvent
+        onSubmit > e: React.FormEvent
+        textarea > HTMLTextAreaElement
+        input    > HTMLInputElement
+
 Y. Fonts:
     import { Font } from 'next/font/google';
     const font = Font({ subsets: ['latin'], weight: ['400'] });
     className={ `${ font.className }` }
+
+Z. Tips:
+    ==> When we call a server action from a server component, we have to do it over a form action.
