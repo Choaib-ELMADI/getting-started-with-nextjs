@@ -169,7 +169,17 @@
     => Both useSelectedLayoutSegment() and useSelectedLayoutSegments() accept a parallelRoutesKey, which allows you 
         read the active route segment within that slot.
 
-15. 
+15. Intercepting Routes:
+16. Route Handlers:
+    => Route Handlers allow you to create custom request handlers for a given route 
+        using the Web Request and Response APIs.
+
+    => Route Handlers are defined in a route.js|ts file inside the app directory.
+
+    *** Supported HTTP Methods:
+        GET, POST, PUT, PATCH, DELETE, HEAD, and OPTIONS
+
+    *** Extended NextRequest and NextResponse APIs
 
 12. Pending Actions:
     import { experimental_useFormStatus as useFormStatus } from "react-dom";
