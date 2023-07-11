@@ -157,6 +157,20 @@
     => Errors bubble up to the nearest parent error boundary.
     => It is important to note that global-error.js must define its own <html> and <body> tags.
 
+14. Parallel Routes:
+    => Parallel Routing allows you to simultaneously or conditionally render one or more pages in the same layout.
+
+    => Parallel Routing allows you to define independent error and loading states for each route as they're being 
+        streamed in independently.
+
+    => Parallel routes are created using named slots. Slots are defined with the @folder convention, and are passed 
+        to the same-level layout as props.
+
+    => Both useSelectedLayoutSegment() and useSelectedLayoutSegments() accept a parallelRoutesKey, which allows you 
+        read the active route segment within that slot.
+
+15. 
+
 12. Pending Actions:
     import { experimental_useFormStatus as useFormStatus } from "react-dom";
     const { pending } = useFormStatus();
