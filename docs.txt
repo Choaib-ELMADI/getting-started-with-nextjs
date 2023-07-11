@@ -181,6 +181,9 @@
 
     *** Extended NextRequest and NextResponse APIs
 
+17. Styling:
+    
+
 12. Pending Actions:
     import { experimental_useFormStatus as useFormStatus } from "react-dom";
     const { pending } = useFormStatus();
