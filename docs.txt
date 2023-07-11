@@ -151,6 +151,12 @@
     => Streaming allows you to break down the page's HTML into smaller chunks 
         and progressively send those chunks from the server to the client.
 
+13. Error Handling:
+    => The error.js file convention allows you to gracefully handle unexpected runtime errors.
+    => Error components must be Client Components.
+    => Errors bubble up to the nearest parent error boundary.
+    => It is important to note that global-error.js must define its own <html> and <body> tags.
+
 12. Pending Actions:
     import { experimental_useFormStatus as useFormStatus } from "react-dom";
     const { pending } = useFormStatus();
